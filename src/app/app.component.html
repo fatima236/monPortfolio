@@ -24,16 +24,57 @@
       </a>
       <!-- Bouton de menu pour les petits écrans -->
       <button
-        class="navbar-toggler"
+        class="navbar-toggler mobile"
         type="button"
-        (click)="toggleMenu()"
+        (click)="openMenu()"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <i class="{{menu_icon}}"></i>
       </button>
   
       <!-- Liens du menu -->
-      <div class="collapse navbar-collapse" [ngClass]="{ 'show': isMenuOpen }" id="navbarNav">
+      <div class="collapse navbar-collapse" [class.mobile_menu]="menuValue" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home" (click)="closeMenu()">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about" (click)="closeMenu()">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience" (click)="closeMenu()">Expérience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projets" (click)="closeMenu()">Projets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" (click)="closeMenu()">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#">
+        <span class="logo">
+          <i class="bi bi-laptop"></i> <!-- Icône Bootstrap pour "informatique" -->
+        </span>
+        <span class="text">Portfolio</span>
+      </a>
+      <!-- Bouton de menu pour les petits écrans -->
+      <button
+        class="navbar-toggler mobile"
+        type="button"
+        (click)="openMenu()"
+        aria-label="Toggle navigation"
+      >
+        <i class="{{menu_icon}}"></i>
+      </button>
+  
+      <!-- Liens du menu -->
+      <div class="collapse navbar-collapse" [class.mobile_menu]="menuValue" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="#home" (click)="closeMenu()">Accueil</a>
@@ -311,7 +352,7 @@
       <!-- Projet 1 : HIRAFI -->
       <div class="projet-item hirafi">
         <div class="projet-image">
-          <img src="fotohir1.jpg" alt="HIRAFI" loading="lazy">
+          <img src="fotohirafi.jpg" alt="HIRAFI" loading="lazy">
         </div>
         <div class="projet-content">
           <h3>HIRAFI</h3>
@@ -363,7 +404,7 @@
       <!-- Projet 3 : Portfolio Personnel -->
       <div class="projet-item portfolio">
         <div class="projet-image">
-          <img src="image.png" alt="Portfolio Personnel" loading="lazy">
+          <img src="portfolio1.png" alt="Portfolio Personnel" loading="lazy">
         </div>
         <div class="projet-content">
           <h3>Portfolio Personnel</h3>
@@ -379,7 +420,7 @@
             <a href="#" class="btn btn-primary">
               <i class="fas fa-play"></i> Voir la Démo
             </a>
-            <a href="https://github.com/votre-utilisateur/portfolio" class="btn btn-secondary" target="_blank">
+            <a href="https://github.com/fatima236/monPortfolio" class="btn btn-secondary" target="_blank">
               <i class="fab fa-github"></i> Code Source
             </a>
           </div>
@@ -405,7 +446,7 @@
             <a href="empsymfony.mp4" class="btn btn-primary">
               <i class="fas fa-play"></i> Voir la Démo
             </a>
-            <a href="https://github.com/votre-utilisateur/gestion-employes" class="btn btn-secondary" target="_blank">
+            <a href="https://github.com/fatima236/EMPLOYE" class="btn btn-secondary" target="_blank">
               <i class="fab fa-github"></i> Code Source
             </a>
           </div>
@@ -431,9 +472,7 @@
             <a href="btranvedio.mp4" class="btn btn-primary">
               <i class="fas fa-play"></i> Voir la Démo
             </a>
-            <a href="https://github.com/bm-sarl/btrans" class="btn btn-secondary" target="_blank">
-              <i class="fab fa-github"></i> Code Source
-            </a>
+           
           </div>
         </div>
       </div>

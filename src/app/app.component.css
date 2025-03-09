@@ -88,12 +88,27 @@ body {
 }
 
 /* Ajustements pour les petits écrans */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .navbar-collapse {
-    background-color: rgba(26, 26, 46, 0.95);
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: fixed !important;
+    right: -280px;
+    transition: 0.4s ease-in-out;
+    top: 64px;
+    background: #02534d;
+    width: 280px;
+    height: 100%;
+  }
+
+  .navbar-collapse.mobile_menu {
+    right: 0;
+    transition: 0.4s ease-in-out;
+  }
+
+  .navbar-toggler.mobile {
+    display: block;
+    color: white;
+    font-size: 40px;
+    padding-top: 10px;
   }
 }
 /* Section Hero */
@@ -675,7 +690,8 @@ body {
   font-size: 2.5rem;
   margin-bottom: 20px;
   background: linear-gradient(90deg, var(--text-light), var(--secondary-color));
-  -webkit-background-clip: text;
+  background-clip: text; /* Propriété standard */
+-webkit-background-clip: text; /* Préfixe vendeur pour la compatibilité */
   -webkit-text-fill-color: transparent;
   animation: slideInLeft 1s ease-in-out;
 }
