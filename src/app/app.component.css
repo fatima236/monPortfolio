@@ -138,7 +138,7 @@ body {
   max-width: 1200px;
   width: 100%;
   gap: 40px;
-  margin-top: 40px;
+
   padding: 0 20px;
   box-sizing: border-box;
   position: relative; /* Permet de superposer le contenu par-dessus les icônes */
@@ -402,6 +402,8 @@ body {
   .hero-content {
     flex-direction: column;
     text-align: center;
+    margin-top: 40px;
+    padding-top: 40px;
   }
 
   .text-container {
@@ -484,6 +486,8 @@ body {
 @media (max-width: 480px) {
   .hero {
     padding: 40px 10px;
+    margin-top: 40px;
+    
   }
 
   .text-container h1 {
