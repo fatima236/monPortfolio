@@ -446,7 +446,7 @@ body {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 40px 15px;
+    padding: 20px 15px;
   }
 
   .text-container h1 {
@@ -497,7 +497,7 @@ body {
 @media (max-width: 480px) {
   .hero {
     padding: 40px 10px;
-    margin-top: 40px;
+    margin-top: 20px;
     
   }
 
