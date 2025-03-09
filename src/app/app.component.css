@@ -138,6 +138,7 @@ body {
   max-width: 1200px;
   width: 100%;
   gap: 40px;
+  margin-top: 40px;
   padding: 0 20px;
   box-sizing: border-box;
   position: relative; /* Permet de superposer le contenu par-dessus les icônes */
@@ -169,7 +170,6 @@ body {
   box-shadow: 0 0 30px rgba(124, 102, 241, 0.5);
   z-index: 2; /* L'image est au-dessus des icônes */
 }
-
 .tech-icons {
   position: absolute;
   top: 0;
@@ -184,16 +184,16 @@ body {
   font-size: 1.5rem;
   color: var(--primary-color);
   opacity: 0.8;
-  animation: rotateIcon 10s linear infinite;
+  animation: rotateIcon 20s linear infinite; /* Ralentir l'animation */
 }
 
-.tech-icons i:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%) translateY(-150%); animation-duration: 8s; }
-.tech-icons i:nth-child(2) { top: 20%; right: 10%; transform: translateX(50%) translateY(-50%); animation-duration: 10s; }
-.tech-icons i:nth-child(3) { top: 50%; right: 0; transform: translateX(50%) translateY(-50%); animation-duration: 7s; }
-.tech-icons i:nth-child(4) { top: 80%; right: 10%; transform: translateX(50%) translateY(50%); animation-duration: 9s; }
-.tech-icons i:nth-child(5) { top: 80%; left: 10%; transform: translateX(-50%) translateY(50%); animation-duration: 12s; }
-.tech-icons i:nth-child(6) { top: 50%; left: 0; transform: translateX(-50%) translateY(-50%); animation-duration: 11s; }
-.tech-icons i:nth-child(7) { top: 20%; left: 10%; transform: translateX(-50%) translateY(-50%); animation-duration: 13s; }
+.tech-icons i:nth-child(1) { top: 10%; left: 10%; transform: translateX(-50%) translateY(-50%); animation-duration: 15s; }
+.tech-icons i:nth-child(2) { top: 20%; right: 20%; transform: translateX(50%) translateY(-50%); animation-duration: 18s; }
+.tech-icons i:nth-child(3) { top: 50%; right: 10%; transform: translateX(50%) translateY(-50%); animation-duration: 12s; }
+.tech-icons i:nth-child(4) { top: 80%; right: 20%; transform: translateX(50%) translateY(50%); animation-duration: 16s; }
+.tech-icons i:nth-child(5) { top: 80%; left: 20%; transform: translateX(-50%) translateY(50%); animation-duration: 20s; }
+.tech-icons i:nth-child(6) { top: 50%; left: 10%; transform: translateX(-50%) translateY(-50%); animation-duration: 14s; }
+.tech-icons i:nth-child(7) { top: 20%; left: 20%; transform: translateX(-50%) translateY(-50%); animation-duration: 17s; }
 
 @keyframes rotateIcon {
   0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
@@ -358,7 +358,26 @@ body {
 .contact-icon:hover::before {
   transform: translate(-50%, -50%) scale(1);
 }
+/* Couleurs spécifiques pour chaque type de contact */
+.contact-icon[href*="mailto"] {
+  background: rgba(233, 69, 96, 0.1);
+}
 
+.contact-icon[href*="linkedin"] {
+  background: rgba(10, 102, 194, 0.1);
+}
+
+.contact-icon[href*="github"] {
+  background: rgba(36, 41, 46, 0.1);
+}
+
+.contact-icon[href*="tel"] {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.contact-icon[href*="whatsapp"] {
+  background: rgba(37, 211, 102, 0.1);
+}
 /* Responsive Design */
 @media (max-width: 1200px) {
   .hero-content {
