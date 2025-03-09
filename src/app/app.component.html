@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Fatima Zahra BOUAYADI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#">
+        <span class="logo">
+          <i class="bi bi-laptop"></i> <!-- Icône Bootstrap pour "informatique" -->
+        </span>
+        <span class="text">Portfolio</span>
+      </a>
+      <!-- Bouton de menu pour les petits écrans -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        (click)="toggleMenu()"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Liens du menu -->
+      <div class="collapse navbar-collapse" [ngClass]="{ 'show': isMenuOpen }" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home" (click)="closeMenu()">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about" (click)="closeMenu()">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience" (click)="closeMenu()">Expérience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projets" (click)="closeMenu()">Projets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" (click)="closeMenu()">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Section Présentative -->
+  <section class="hero">
+    <!-- Conteneur principal -->
+    <div class="hero-content">
+      <!-- Texte et boutons -->
+      <div class="text-container">
+        <h1>BOUAYADI FATIMA ZAHRA</h1>
+        <p class="subtitle">Ingénieure Full Stack Mobile et Web</p>
+        
+        <!-- Bouton Télécharger CV -->
+        <a href="FATIMAZAHRA-CV-VERSION1.pdf" download class="btn1">Télécharger CV</a>
+  
+        <!-- Section Contact -->
+        <div class="contact-section">
+          <h3>Disponible pour de nouvelles opportunités</h3>
+          <div class="contact-icons">
+            <a href="mailto:fatimazahrabouayadi96@gmail.com" class="contact-icon">
+              <i class="fas fa-envelope"></i>
+              <span>Email</span>
+            </a>
+            <a href="https://linkedin.com/in/fatima-zahra-bouayadi" target="_blank" class="contact-icon">
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/fatima236" target="_blank" class="contact-icon">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <!-- Ajout de l'icône de téléphone -->
+            <a href="tel:+212708002335" class="contact-icon">
+              <i class="fas fa-phone"></i>
+              <span>Téléphone</span>
+            </a>
+            <!-- Ajout de l'icône de WhatsApp -->
+            <a href="https://wa.me/212708002335" target="_blank" class="contact-icon">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Image de profil à droite -->
+      <div class="image-container">
+        <img src="profile.jpg" alt="Photo de profil">
+        <div class="tech-icons">
+            <i class="fab fa-java"></i>
+            <i class="fab fa-react"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-angular"></i>
+            <i class="fab fa-laravel"></i>
+            <i class="fab fa-android"></i>
+            <i class="fab fa-node"></i>
+            <i class="fab fa-python"></i>
+        </div>
+    </div>
+    </div>
+  </section>
+  <!-- Section À propos -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-image">
+        <div class="image-wrapper">
+          <img src="foto4.jpg" alt="À propos de moi">
+        </div>
+      </div>
+      <div class="about-text">
+        <h1>À propos de moi</h1>
+        <p class="intro">Je suis une développeuse Full-Stack passionnée par la création d'applications web et mobiles. J'aime résoudre des problèmes complexes et créer des solutions innovantes.</p>
+        
+        <!-- Compétences -->
+        <div class="skills">
+          <h2>Mes Compétences</h2>
+          <div class="skill-grid">
+            <!-- Développement Web - Front-end -->
+            <div class="skill">
+              <i class="fab fa-html5"></i>
+              <span>HTML</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-angular"></i>
+              <span>Angular</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-bootstrap"></i>
+              <span>Bootstrap</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+            </div>
+      
+            <!-- Développement Web - Back-end -->
+            <div class="skill">
+              <i class="fab fa-java"></i>
+              <span>Spring Boot</span>
+            </div>
+            <div class="skill">
+              <i class="fab fa-php"></i>
+              <span>PHP (Laravel, Symfony)</span>
+            </div>
+      
+            <!-- Base de données -->
+            <div class="skill">
+              <i class="fas fa-database"></i>
+              <span>MySQL</span>
+            </div>
+           
+      
+            <!-- Développement Mobile -->
+            <div class="skill">
+              <i class="fab fa-android"></i>
+              <span>Android (java)</span>
+            </div>
+      
+            <!-- Gestion de version -->
+           
+            <div class="skill">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      
+    </div>
+  </section>
+
+  <!-- Section Expérience & Formation -->
+  <section id="experience">
+    <div class="container">
+      
+
+      <!-- Expérience Professionnelle -->
+      <div class="experience-section">
+        <h3><span>Expérience Professionnelle</span></h3>
+        <div class="experience-item">
+          <div class="experience-icon">
+            <img src="bmo.png" alt="Logo B Mondual">
+          </div>
+          <div class="experience-content">
+            <div class="experience-header">
+              <h4>Stagiaire Développeuse</h4>
+              <span class="date">Juillet - Août 2023</span>
+            </div>
+            <p class="company">B-Mondial, Nador</p>
+            <p class="description">Conception et développement d'une application web en Laravel & MySQL pour la gestion et le suivi des colis. Intégration d'un système de rôles et permissions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formation -->
+      <div class="formation-section">
+        <h3><span>Formation</span></h3>
+        <div class="formation-wrapper">
+          <div class="formation-left">
+            <div class="formation-image">
+              <img src="foto5.jpg" alt="Image Formation">
+            </div>
+            
+            <div class="stats-section">
+              <div class="stats-wrapper">
+                <div class="stat-item">
+                  <i class="fas fa-project-diagram"></i>
+                  <span class="stat-number" data-target="15">6</span>
+                  <span class="stat-label">Projets Réalisés</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-clock"></i>
+                  <span class="stat-number" data-target="3">1</span>
+                  <span class="stat-label">Années d'Expérience</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-users"></i>
+                  <span class="stat-number" data-target="10">10</span>
+                  <span class="stat-label">Clients Satisfaits</span>
+                </div>
+                <div class="stat-item">
+                  <i class="fas fa-code"></i>
+                  <span class="stat-number" data-target="5000">7000</span>
+                  <span class="stat-label">Lignes de Code</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="formation-content">
+            <div class="formation-item" data-type="ingenieur">
+              <div class="formation-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="formation-details">
+                <h4>Cycle d'Ingénieur</h4>
+                <span class="date">2023 - 2026</span>
+                <p>École Nationale des Sciences Appliquées</p>
+                <p>Génie Informatique</p>
+              </div>
+            </div>
+            <div class="formation-item" data-type="preparatoire">
+              <div class="formation-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <div class="formation-details">
+                <h4>Cycle Préparatoire</h4>
+                <span class="date">2021 - 2023</span>
+                <p>École Nationale des Sciences Appliquées, Oujda</p>
+              </div>
+            </div>
+            <div class="formation-item" data-type="developpeur">
+              <div class="formation-icon">
+                <i class="fas fa-laptop-code"></i> <!-- Icône pour développeur -->
+              </div>
+              <div class="formation-details">
+                <h4>Développeur d'Application Informatique</h4>
+                <span class="date">2020 - 2021</span>
+                <p>École Supérieure de Technologie, Oujda</p>
+              </div>
+            </div>
+            <div class="formation-item" data-type="baccalaureat">
+              <div class="formation-icon">
+                <i class="fas fa-award"></i> <!-- Icône pour baccalauréat -->
+              </div>
+              <div class="formation-details">
+                <h4>Baccalauréat en Sciences Physiques</h4>
+                <span class="date">2019 - 2020</span>
+                <p>Lycée Kadi Ayad</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  
+    </div>
+  </section>
+
+ <!-- Section Projets -->
+ <section id="projets">
+  <div class="container">
+    <h2><span>Mes Projets</span></h2>
+    <div class="projet-ligne">
+      <!-- Projet 1 : HIRAFI -->
+      <div class="projet-item hirafi">
+        <div class="projet-image">
+          <img src="fotohir1.jpg" alt="HIRAFI" loading="lazy">
+        </div>
+        <div class="projet-content">
+          <h3>HIRAFI</h3>
+          <p class="description">
+            Développement d'une solution web pour faciliter la gestion des services et clients des artisans au Maroc. Intégration d’un système d’authentification sécurisé et gestion avancée des données.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-item"><i class="fab fa-react"></i> React.js</span>
+            <span class="tech-item"><i class="fab fa-java"></i> Spring Boot</span>
+            <span class="tech-item"><i class="fas fa-database"></i> MySQL</span>
+          </div>
+          <div class="projet-links">
+            <a href="hirafived.mp4" class="btn btn-primary">
+              <i class="fas fa-play"></i> Voir la Démo
+            </a>
+            <a href="https://github.com/fatima236/HIRAFI_REACT" class="btn btn-secondary" target="_blank">
+              <i class="fab fa-github"></i> Code Source
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 2 : CODUCATIF -->
+      <div class="projet-item coducatif">
+        <div class="projet-image">
+          <img src="codu1.png" alt="CODUCATIF" loading="lazy">
+        </div>
+        <div class="projet-content">
+          <h3>CODUCATIF</h3>
+          <p class="description">
+            Conception et développement d’une application Android intégrant des jeux interactifs et une roadmap d’apprentissage pour une expérience éducative engageante.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-item"><i class="fab fa-android"></i> Android</span>
+            <span class="tech-item"><i class="fab fa-java"></i> Java</span>
+            <span class="tech-item"><i class="fas fa-fire"></i> Firebase</span>
+          </div>
+          <div class="projet-links">
+            <a href="coduvedio.mp4" class="btn btn-primary">
+              <i class="fas fa-play"></i> Voir la Démo
+            </a>
+            <a href="https://github.com/Salma-azz23/coducatif" class="btn btn-secondary" target="_blank">
+              <i class="fab fa-github"></i> Code Source
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 3 : Portfolio Personnel -->
+      <div class="projet-item portfolio">
+        <div class="projet-image">
+          <img src="image.png" alt="Portfolio Personnel" loading="lazy">
+        </div>
+        <div class="projet-content">
+          <h3>Portfolio Personnel</h3>
+          <p class="description">
+            Création d'une application web dynamique en Angular pour présenter mes projets et compétences, avec gestion de contenu en temps réel via Firebase.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-item"><i class="fab fa-angular"></i> Angular</span>
+            <span class="tech-item"><i class="fas fa-database"></i> Firebase</span>
+            <span class="tech-item"><i class="fab fa-sass"></i> SCSS</span>
+          </div>
+          <div class="projet-links">
+            <a href="#" class="btn btn-primary">
+              <i class="fas fa-play"></i> Voir la Démo
+            </a>
+            <a href="https://github.com/votre-utilisateur/portfolio" class="btn btn-secondary" target="_blank">
+              <i class="fab fa-github"></i> Code Source
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 4 : Gestion des Employés -->
+      <div class="projet-item gestion-employes">
+        <div class="projet-image">
+          <img src="emp4.png" alt="Gestion des Employés" loading="lazy">
+        </div>
+        <div class="projet-content">
+          <h3>Gestion des Employés</h3>
+          <p class="description">
+            Implémentation d’un système RH permettant la gestion des utilisateurs, des rôles et des permissions pour une meilleure administration des employés.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-item"><i class="fab fa-php"></i> Symfony</span>
+            <span class="tech-item"><i class="fas fa-database"></i> PostgreSQL</span>
+            <span class="tech-item"><i class="fab fa-html5"></i> Twig</span>
+          </div>
+          <div class="projet-links">
+            <a href="empsymfony.mp4" class="btn btn-primary">
+              <i class="fas fa-play"></i> Voir la Démo
+            </a>
+            <a href="https://github.com/votre-utilisateur/gestion-employes" class="btn btn-secondary" target="_blank">
+              <i class="fab fa-github"></i> Code Source
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 5 : B-Trans -->
+      <div class="projet-item b-trans">
+        <div class="projet-image">
+          <img src="btrans2.png" alt="B-Trans" loading="lazy">
+        </div>
+        <div class="projet-content">
+          <h3>B-Trans</h3>
+          <p class="description">
+            Conception et développement d’une application web pour la gestion et le suivi des colis, avec intégration d’un système de rôles et permissions.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-item"><i class="fab fa-laravel"></i> Laravel</span>
+            <span class="tech-item"><i class="fas fa-database"></i> MySQL</span>
+            <span class="tech-item"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+          </div>
+          <div class="projet-links">
+            <a href="btranvedio.mp4" class="btn btn-primary">
+              <i class="fas fa-play"></i> Voir la Démo
+            </a>
+            <a href="https://github.com/bm-sarl/btrans" class="btn btn-secondary" target="_blank">
+              <i class="fab fa-github"></i> Code Source
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projet 6 : CERBO -->
+      
+   
+    </div>
+  </div>
+</section>
+
+  <!-- Section Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2><span>Contactez-moi</span></h2>
+      <p class="contact-intro">
+        Disponible pour toute opportunité ou collaboration. Contactez-moi directement via les liens ci-dessous.
+      </p>
+      <div class="contact-list">
+        <a href="tel:+212708002335" class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+212 708 002 335</span>
+        </a>
+        <a href="mailto:fatimazahrabouayadi96@gmail.com" class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>fatimazahrabouayadi96&#64;gmail.com</span>
+
+        </a>
+        <a href="https://wa.me/212708002335" target="_blank" class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="https://linkedin.com/in/votre-profil" target="_blank" class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
