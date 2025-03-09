@@ -122,27 +122,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 40px 20px; /* Petite marge à gauche et à droite */
+  min-height: 100vh; /* Prend toute la hauteur de l'écran */
+  padding: 40px 20px; /* Marge interne */
   background: var(--dark-bg);
   color: var(--text-light);
   box-sizing: border-box; /* Inclut le padding dans la largeur */
+  overflow: hidden; /* Empêche tout débordement */
+  position: relative; /* Permet de positionner les icônes en arrière-plan */
 }
 
 .hero-content {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centrer horizontalement */
-  max-width: 1200px; /* Largeur maximale du contenu */
+  justify-content: center;
+  max-width: 1200px;
   width: 100%;
   gap: 40px;
-  padding: 0 20px; /* Petite marge à gauche et à droite */
-  box-sizing: border-box; /* Inclut le padding dans la largeur */
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative; /* Permet de superposer le contenu par-dessus les icônes */
+  z-index: 2; /* Le contenu est au-dessus des icônes */
 }
 
 .text-container {
   max-width: 800px;
   text-align: left;
+  z-index: 2; /* Le texte est au-dessus des icônes */
 }
 
 .image-container {
@@ -152,6 +157,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1; /* L'image est au-dessus des icônes */
 }
 
 .image-container img {
@@ -161,7 +167,7 @@ body {
   border-radius: 50%;
   border: 5px solid var(--secondary-color);
   box-shadow: 0 0 30px rgba(124, 102, 241, 0.5);
-  z-index: 2;
+  z-index: 2; /* L'image est au-dessus des icônes */
 }
 
 .tech-icons {
@@ -170,7 +176,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 1; /* Les icônes sont en arrière-plan de l'image */
 }
 
 .tech-icons i {
@@ -199,21 +205,19 @@ body {
   margin-bottom: 15px;
   color: var(--secondary-color);
   overflow: hidden;
-  white-space: nowrap; /* Empêche le retour à la ligne */
-  border-right: 3px solid var(--accent-color); /* Curseur de type "typing" */
+  white-space: nowrap;
+  border-right: 3px solid var(--accent-color);
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
   font-family: 'Arial', sans-serif;
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Animation de type "typing" */
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
 
-/* Animation du curseur */
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: var(--accent-color); }
@@ -230,12 +234,8 @@ body {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .btn1 {
@@ -294,8 +294,8 @@ body {
 .contact-icons {
   display: flex;
   gap: 25px;
-  flex-wrap: wrap; /* Permet aux icônes de passer à la ligne */
-  justify-content: center; /* Centre les icônes horizontalement */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .contact-icon {
@@ -312,9 +312,9 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 10px; /* Espacement entre les icônes */
+  margin: 10px;
   position: relative;
-  overflow: hidden; /* Cache l'effet qui dépasse */
+  overflow: hidden;
 }
 
 .contact-icon:hover {
@@ -325,7 +325,7 @@ body {
 
 .contact-icon i {
   transition: transform 0.3s ease, opacity 0.3s ease;
-  z-index: 1; /* Assure que l'icône est au-dessus de l'effet */
+  z-index: 1;
 }
 
 .contact-icon:hover i {
@@ -334,20 +334,19 @@ body {
 
 .contact-icon span {
   transition: opacity 0.3s ease;
-  z-index: 1; /* Assure que le texte est au-dessus de l'effet */
+  z-index: 1;
 }
 
 .contact-icon:hover span {
   opacity: 0.8;
 }
 
-/* Effet de contact sur l'icône */
 .contact-icon::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%; /* Taille de l'effet réduite à la taille de l'icône */
+  width: 100%;
   height: 100%;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
   transform: translate(-50%, -50%) scale(0);
@@ -358,27 +357,6 @@ body {
 
 .contact-icon:hover::before {
   transform: translate(-50%, -50%) scale(1);
-}
-
-/* Couleurs spécifiques pour chaque type de contact */
-.contact-icon[href*="mailto"] {
-  background: rgba(233, 69, 96, 0.1);
-}
-
-.contact-icon[href*="linkedin"] {
-  background: rgba(10, 102, 194, 0.1);
-}
-
-.contact-icon[href*="github"] {
-  background: rgba(36, 41, 46, 0.1);
-}
-
-.contact-icon[href*="tel"] {
-  background: rgba(76, 175, 80, 0.1);
-}
-
-.contact-icon[href*="whatsapp"] {
-  background: rgba(37, 211, 102, 0.1);
 }
 
 /* Responsive Design */
@@ -409,7 +387,7 @@ body {
 
   .text-container {
     order: 2;
-    text-align: center; /* Centrer le texte */
+    text-align: center;
   }
 
   .image-container {
@@ -420,9 +398,9 @@ body {
 
   .text-container h1 {
     font-size: 2.5rem;
-    white-space: normal; /* Permet le retour à la ligne */
-    border-right: none; /* Supprime le curseur */
-    animation: none; /* Désactive l'animation de type "typing" */
+    white-space: normal;
+    border-right: none;
+    animation: none;
   }
 
   .subtitle {
@@ -478,8 +456,9 @@ body {
     font-size: 0.8rem;
   }
 
-  .tech-icons {
-    display: none;
+  /* Ajustement des tech-icons pour les petits écrans */
+  .tech-icons i {
+    font-size: 1.2rem; /* Taille réduite des icônes */
   }
 }
 
@@ -514,6 +493,11 @@ body {
 
   .contact-icon span {
     font-size: 0.7rem;
+  }
+
+  /* Ajustement supplémentaire des tech-icons pour les très petits écrans */
+  .tech-icons i {
+    font-size: 1rem; /* Taille encore plus réduite */
   }
 }
 /* Section About */
