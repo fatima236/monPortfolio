@@ -13,9 +13,11 @@ export class AppComponent {
 title = 'mon-portfolio-fati'
   // Basculer le menu mobile
   openMenu() {
+    console.log('Bouton menu cliqué !');
     this.menuValue = !this.menuValue;
     this.menu_icon = this.menuValue ? 'bi bi-x' : 'bi bi-list';
   }
+  
 
   // Fermer le menu après un clic sur un lien
   closeMenu() {
