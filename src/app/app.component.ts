@@ -1,26 +1,26 @@
 import { Component } from '@angular/core';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None // Désactive l'encapsulation
 })
 export class AppComponent {
-  menuValue: boolean = false;
-  menu_icon: string = 'bi bi-list';
+  
 title = 'mon-portfolio-fati'
   // Basculer le menu mobile
-  openMenu() {
-    console.log('Bouton menu cliqué !');
-    this.menuValue = !this.menuValue;
+ 
+
+  // Basculer le menu mobile
+  menuValue:boolean=false;
+ menu_icon :string ='bi bi-list';
+ openMenu(){
+    this.menuValue =! this.menuValue ;
     this.menu_icon = this.menuValue ? 'bi bi-x' : 'bi bi-list';
   }
-  
-
-  // Fermer le menu après un clic sur un lien
-  closeMenu() {
+   closeMenu() {
     this.menuValue = false;
     this.menu_icon = 'bi bi-list';
   }

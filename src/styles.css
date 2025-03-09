@@ -1,1 +1,2071 @@
 /* You can add global styles to this file, and also import other style files */
+   /* Variables CSS */
+   :root {
+    --dark-bg: #0d1b2a; /* Fond sombre plus profond */
+    --light-bg: #e0e1dd; /* Fond clair plus doux */
+    --primary-color: #1b263b; /* Couleur principale plus sobre */
+    --secondary-color: #ff6b6b; /* Couleur secondaire vibrante */
+    --accent-color: #4ecdc4; /* Couleur d'accent plus fraîche */
+    --text-light: #ffffff; /* Texte clair */
+    --text-dark: #0d1b2a; /* Texte sombre */
+}
+/* Styles de base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    transition: background-color 0.1s ease-in-out;
+}
+
+/* Navigation */
+/* Navigation */
+/* Navigation */
+/* Styles pour le mode light */
+/* Variables CSS pour le mode dark (par défaut) */
+
+
+/* Styles de base en mode dark */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Styles pour le mode light */
+
+
+/* Exemple d'application des couleurs pour les éléments */
+/* Personnalisation de la barre de navigation */
+.navbar {
+  background-color: rgba(26, 26, 46, 0.9) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Taille de police */
+  font-weight: bold; /* Texte en gras */
+  color: var(--text-light); /* Couleur du texte */
+  text-decoration: none; /* Supprimer le soulignement */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espace entre le logo et le texte */
+}
+
+.navbar-brand .logo {
+  display: inline-block;
+  animation: rotateOnce 1s ease-in-out; /* Animation de rotation une seule fois */
+  color: var(--accent-color); /* Couleur d'accent pour le logo */
+}
+
+@keyframes rotateOnce {
+  from {
+    transform: rotate(0deg); /* Début de la rotation */
+  }
+  to {
+    transform: rotate(360deg); /* Fin de la rotation (360 degrés) */
+  }
+}
+
+.navbar-brand .text {
+  color: var(--accent-color); /* Même couleur que le logo */
+}
+
+.nav-link {
+  color: var(--text-light) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+  transform: translateY(-2px);
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-width: 900px) {
+  .navbar-collapse {
+    position: fixed !important;
+    right: -280px;
+    transition: 0.4s ease-in-out;
+    top: 64px;
+    background: #02534d;
+    width: 280px;
+    height: 100%;
+  }
+
+  .navbar-collapse.mobile_menu {
+    right: 0;
+    transition: 0.4s ease-in-out;
+  }
+
+  .navbar-toggler.mobile {
+    display: block;
+    color: white;
+    font-size: 40px;
+    padding-top: 10px;
+  }
+}
+/* Section Hero */
+
+/* Section Hero */
+
+
+
+/* Styles de base */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Prend toute la hauteur de l'écran */
+  padding: 40px 20px; /* Marge interne */
+  background: var(--dark-bg);
+  color: var(--text-light);
+  box-sizing: border-box; /* Inclut le padding dans la largeur */
+  overflow: hidden; /* Empêche tout débordement */
+  position: relative; /* Permet de positionner les icônes en arrière-plan */
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative; /* Permet de superposer le contenu par-dessus les icônes */
+  z-index: 2; /* Le contenu est au-dessus des icônes */
+}
+
+.text-container {
+  max-width: 800px;
+  text-align: left;
+  z-index: 2; /* Le texte est au-dessus des icônes */
+}
+
+.image-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* L'image est au-dessus des icônes */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--secondary-color);
+  box-shadow: 0 0 30px rgba(124, 102, 241, 0.5);
+  z-index: 2; /* L'image est au-dessus des icônes */
+}
+.tech-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Les icônes sont en arrière-plan de l'image */
+}
+
+.tech-icons i {
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  opacity: 0.8;
+  animation: rotateIcon 20s linear infinite; /* Ralentir l'animation */
+}
+
+/* Positions initiales pour les icônes */
+.tech-icons i:nth-child(1) { top: 10%; left: 10%; transform: translateX(-50%) translateY(-50%); animation-duration: 15s; }
+.tech-icons i:nth-child(2) { top: 10%; right: 10%; transform: translateX(50%) translateY(-50%); animation-duration: 18s; }
+.tech-icons i:nth-child(3) { top: 50%; right: 10%; transform: translateX(50%) translateY(-50%); animation-duration: 12s; }
+.tech-icons i:nth-child(4) { top: 90%; right: 10%; transform: translateX(50%) translateY(50%); animation-duration: 16s; }
+.tech-icons i:nth-child(5) { top: 90%; left: 10%; transform: translateX(-50%) translateY(50%); animation-duration: 20s; }
+.tech-icons i:nth-child(6) { top: 50%; left: 10%; transform: translateX(-50%) translateY(-50%); animation-duration: 14s; }
+.tech-icons i:nth-child(7) { top: 10%; left: 50%; transform: translateX(-50%) translateY(-50%); animation-duration: 17s; }
+
+@keyframes rotateIcon {
+  0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+.text-container h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--accent-color);
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent-color); }
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  opacity: 1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-family: 'Arial', sans-serif;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.btn1 {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text-light);
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(124, 102, 241, 0.4);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.btn1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(124, 102, 241, 0.6);
+}
+
+.btn1::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.btn1:hover::after {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-section {
+  margin-top: 20px;
+}
+
+.contact-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--text-light);
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: var(--text-light);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon i {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1;
+}
+
+.contact-icon:hover i {
+  transform: scale(1.2);
+}
+
+.contact-icon span {
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.contact-icon:hover span {
+  opacity: 0.8;
+}
+
+.contact-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.contact-icon:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+/* Couleurs spécifiques pour chaque type de contact */
+.contact-icon[href*="mailto"] {
+  background: rgba(233, 69, 96, 0.1);
+}
+
+.contact-icon[href*="linkedin"] {
+  background: rgba(10, 102, 194, 0.1);
+}
+
+.contact-icon[href*="github"] {
+  background: rgba(36, 41, 46, 0.1);
+}
+
+.contact-icon[href*="tel"] {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.contact-icon[href*="whatsapp"] {
+  background: rgba(37, 211, 102, 0.1);
+}
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .hero-content {
+    gap: 20px;
+  }
+
+  .text-container h1 {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .image-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+
+  .text-container {
+    order: 2;
+    text-align: center;
+  }
+
+  .image-container {
+    order: 1;
+    width: 250px;
+    height: 250px;
+  }
+
+  .text-container h1 {
+    font-size: 2.5rem;
+    white-space: normal;
+    border-right: none;
+    animation: none;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .btn1 {
+    font-size: 2rem;
+    padding: 10px 20px;
+  }
+
+  .contact-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+
+  .contact-icon span {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px 15px;
+  }
+
+  .text-container h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  .tech-icons i {
+    font-size: 1rem; /* Taille réduite des icônes */
+  }
+
+  /* Ajustement des positions pour les petits écrans */
+  .tech-icons i:nth-child(1) { top: 5%; left: 5%; transform: translateX(-50%) translateY(-50%); animation-duration: 15s; }
+  .tech-icons i:nth-child(2) { top: 5%; right: 5%; transform: translateX(50%) translateY(-50%); animation-duration: 18s; }
+  .tech-icons i:nth-child(3) { top: 50%; right: 5%; transform: translateX(50%) translateY(-50%); animation-duration: 12s; }
+  .tech-icons i:nth-child(4) { top: 95%; right: 5%; transform: translateX(50%) translateY(50%); animation-duration: 16s; }
+  .tech-icons i:nth-child(5) { top: 95%; left: 5%; transform: translateX(-50%) translateY(50%); animation-duration: 20s; }
+  .tech-icons i:nth-child(6) { top: 50%; left: 5%; transform: translateX(-50%) translateY(-50%); animation-duration: 14s; }
+  .tech-icons i:nth-child(7) { top: 5%; left: 50%; transform: translateX(-50%) translateY(-50%); animation-duration: 17s; }
+  .image-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .btn1 {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .contact-icon {
+    width: 90px;
+    height: 90px;
+    font-size: 1.5rem;
+  }
+
+  .contact-icon span {
+    font-size: 0.8rem;
+  }
+
+  /* Ajustement des tech-icons pour les petits écrans */
+  .tech-icons i {
+    font-size: 1.2rem; /* Taille réduite des icônes */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 10px;
+    margin-top: 20px;
+  }
+
+  .text-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .image-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .btn1 {
+    font-size: 1rem; /* Augmenter la taille du bouton */
+    padding: 10px 20px; /* Ajuster le padding pour un meilleur rendu */
+  }
+
+  .contact-section h3 {
+    font-size: 1.9rem; /* Augmenter la taille du h3 */
+  }
+
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  .contact-icon span {
+    font-size: 0.7rem;
+  }
+
+  /* Ajustement supplémentaire des tech-icons pour les très petits écrans */
+  .tech-icons i {
+    font-size: 1rem; /* Taille encore plus réduite */
+  }
+}
+/* Section About */
+
+/* Section About */
+#about {
+  padding: 10px 20px;
+  padding-bottom: 40px;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Séparateur visuel entre Hero et About */
+.section-separator {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+}
+
+.section-separator svg {
+  width: 100%;
+  height: 100%;
+}
+
+.section-separator path {
+  fill: var(--dark-bg);
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+/* Partie Image */
+.about-image {
+  flex: 1;
+  max-width: 400px;
+  position: relative;
+  padding-top: 70px;
+  margin: 0 auto; /* Centrer l'image */
+}
+
+.about-image .image-wrapper {
+  width: 100%; /* Prendre toute la largeur disponible */
+  max-width: 350px; /* Limiter la largeur maximale */
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(124, 102, 241, 0.5);
+  position: relative;
+  margin: 0 auto; /* Centrer le wrapper */
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.tech-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.tech-icons i {
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  opacity: 0.8;
+  animation: rotateIcon 10s linear infinite;
+}
+
+.tech-icons i:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%) translateY(-150%); animation-duration: 8s; }
+.tech-icons i:nth-child(2) { top: 20%; right: 10%; transform: translateX(50%) translateY(-50%); animation-duration: 10s; }
+.tech-icons i:nth-child(3) { top: 50%; right: 0; transform: translateX(50%) translateY(-50%); animation-duration: 7s; }
+.tech-icons i:nth-child(4) { top: 80%; right: 10%; transform: translateX(50%) translateY(50%); animation-duration: 9s; }
+.tech-icons i:nth-child(5) { top: 80%; left: 10%; transform: translateX(-50%) translateY(50%); animation-duration: 12s; }
+.tech-icons i:nth-child(6) { top: 50%; left: 0; transform: translateX(-50%) translateY(-50%); animation-duration: 11s; }
+.tech-icons i:nth-child(7) { top: 20%; left: 10%; transform: translateX(-50%) translateY(-50%); animation-duration: 13s; }
+
+@keyframes rotateIcon {
+  0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+/* Partie Texte */
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto; /* Centrer le texte */
+  padding: 0 20px; /* Ajouter un espacement latéral */
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--text-light), var(--secondary-color));
+  background-clip: text; /* Propriété standard */
+  -webkit-background-clip: text; /* Préfixe vendeur */
+  -webkit-text-fill-color: transparent;
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.about-text .intro {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: var(--text-light);
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+  text-align: center; /* Centrer le titre */
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Grille adaptable */
+  gap: 20px;
+  padding: 0 20px; /* Ajouter un espacement latéral */
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(124, 102, 241, 0.5);
+}
+
+.skill i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.skill span {
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    padding-top: 40px; /* Réduire l'espacement */
+  }
+
+  .about-text {
+    max-width: 100%; /* Prendre toute la largeur */
+    padding: 0 10px; /* Réduire l'espacement latéral */
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petits écrans */
+    gap: 10px; /* Réduire l'espacement */
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-grid {
+    grid-template-columns: 1fr; /* 1 colonne sur très petits écrans */
+  }
+
+  .about-text h1 {
+    font-size: 2rem; /* Réduire la taille du titre */
+  }
+
+  .about-text .intro {
+    font-size: 1rem; /* Réduire la taille du texte */
+  }
+}
+
+.separator {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.separator svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.separator path {
+  fill: #e94560;
+  animation: waveAnimation 3s infinite linear;
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
+/* Section Expérience */
+/* Styles généraux */
+#experience {
+  padding: 40px 20px;
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Ajouter un espacement latéral */
+}
+
+/* Expérience Professionnelle */
+.experience-section h3 {
+  font-size: 2.5rem; /* Taille de police plus grande */
+  color: var(--text-light);
+  margin-bottom: 40px; /* Espacement accru */
+  text-align: center;
+  position: relative;
+  display: inline-block; /* Pour limiter la largeur du titre */
+  padding-bottom: 10px; /* Espace pour la bordure animée */
+}
+
+/* Effet de soulignement animé centré */
+.experience-section h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px; /* Largeur de la bordure */
+  height: 3px; /* Épaisseur de la bordure */
+  background: var(--accent-color); /* Couleur de la bordure */
+  transform: translateX(-50%); /* Centrer la bordure */
+  transition: width 0.3s ease; /* Animation de la bordure */
+}
+
+.experience-section h3:hover::after {
+  width: 100%; /* La bordure s'étend sur toute la largeur au survol */
+}
+
+/* Effet de texte dégradé */
+.experience-section h3 span {
+  background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Rendre le texte transparent pour afficher le dégradé */
+}
+
+/* Ombre portée pour le titre */
+.experience-section h3 {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+
+/* Centrer le titre dans la section */
+.experience-section {
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  flex-direction: column; /* Aligner les éléments en colonne */
+}
+
+.experience-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid var(--secondary-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+}
+
+.experience-icon img {
+  height: 50px;
+  width: auto; /* Garde les proportions réelles */
+  margin-right: 20px;
+}
+
+.experience-content {
+  flex: 1;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.experience-header h4 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: var(--text-light);
+}
+
+.experience-header .date {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  background: rgba(233, 69, 96, 0.1);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.company {
+  font-size: 1rem;
+  color: var(--text-light);
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Responsive Design pour les téléphones */
+@media (max-width: 767px) {
+  #experience {
+    padding: 40px 10px; /* Réduire l'espacement latéral */
+  }
+
+  .experience-section h3 {
+    font-size: 2rem; /* Taille de police réduite pour les petits écrans */
+  }
+
+  .experience-item {
+    flex-direction: column; /* Empiler les éléments verticalement */
+    align-items: flex-start; /* Aligner à gauche */
+    padding: 15px; /* Réduire le padding pour les petits écrans */
+  }
+
+  .experience-icon img {
+    margin-right: 0; /* Supprimer la marge à droite de l'icône */
+    margin-bottom: 15px; /* Ajouter une marge en bas pour l'icône */
+  }
+
+  .experience-header {
+    flex-direction: column; /* Empiler le titre et la date */
+    align-items: flex-start; /* Aligner à gauche */
+  }
+
+  .experience-header .date {
+    margin-top: 10px; /* Espace entre le titre et la date */
+  }
+
+  .company {
+    font-size: 0.9rem; /* Taille de police réduite pour les petits écrans */
+  }
+
+  .description {
+    font-size: 0.9rem; /* Taille de police réduite pour les petits écrans */
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section h3 {
+    font-size: 1.8rem; /* Taille de police encore plus réduite pour les très petits écrans */
+  }
+
+  .experience-item {
+    padding: 10px; /* Réduire encore le padding */
+  }
+
+  .experience-header h4 {
+    font-size: 1.1rem; /* Taille de police réduite pour les très petits écrans */
+  }
+
+  .experience-header .date {
+    font-size: 0.8rem; /* Taille de police réduite pour les très petits écrans */
+  }
+
+  .company {
+    font-size: 0.85rem; /* Taille de police réduite pour les très petits écrans */
+  }
+
+  .description {
+    font-size: 0.85rem; /* Taille de police réduite pour les très petits écrans */
+  }
+}
+/* Formation */
+/* Formation */
+.formation-section {
+
+  margin-left: 2px; /* Marge de 2px à gauche */
+  margin-right: 2px; /* Marge de 2px à droite */
+  width: calc(100% - 4px); /* Largeur totale moins les marges */
+}
+
+.formation-section h3 {
+  font-size: 2.5rem; /* Taille de police plus grande */
+  color: var(--text-light);
+  margin-bottom: 40px; /* Espacement accru */
+  text-align: center; /* Centrer le texte */
+  position: relative;
+  width: 100%; /* Occuper toute la largeur */
+  padding-bottom: 10px; /* Espace pour la bordure animée */
+}
+
+/* Effet de soulignement animé centré */
+.formation-section h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px; /* Largeur de la bordure */
+  height: 3px; /* Épaisseur de la bordure */
+  background: var(--accent-color); /* Couleur de la bordure */
+  transform: translateX(-50%); /* Centrer la bordure */
+  transition: width 0.3s ease; /* Animation de la bordure */
+}
+
+.formation-section h3:hover::after {
+  width: 100%; /* La bordure s'étend sur toute la largeur au survol */
+}
+
+/* Effet de texte dégradé */
+.formation-section h3 span {
+  background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Rendre le texte transparent pour afficher le dégradé */
+}
+
+/* Ombre portée pour le titre */
+.formation-section h3 {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+.formation-wrapper {
+  display: flex;
+  align-items: flex-start; /* Aligner en haut */
+  gap: 40px; /* Espace entre l'image et le contenu */
+  width: 100%; /* Prendre toute la largeur disponible */
+}
+
+/* Image à gauche */
+.formation-image {
+  flex: 0 0 300px; /* Largeur fixe pour l'image */
+  border-radius: 12px;
+  overflow: hidden;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center; /* Centrer l'image verticalement */
+  justify-content: center;
+  /* Fond pour éviter un espace vide */
+}
+
+.formation-image img {
+  width: 100%;
+  height: auto;
+  max-height: 500px; /* Limiter la hauteur de l'image */
+  object-fit: cover; /* Couvrir l'espace sans déformation */
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.formation-image:hover {
+  transform: scale(1.05); /* Zoom léger au survol */
+  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+}
+
+/* Contenu de la formation */
+.formation-content {
+  flex: 1; /* Prendre tout l'espace restant */
+}
+
+.formation-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formation-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(69, 233, 150, 0.3);
+}
+
+.formation-icon i {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-right: 20px;
+}
+
+.formation-details h4 {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+
+.formation-details .date {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+
+.formation-details p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+/* Icônes personnalisées selon le contenu */
+.formation-item[data-type="ingenieur"] .formation-icon i {
+  color: #4ecdc4; /* Couleur pour le cycle d'ingénieur */
+}
+
+.formation-item[data-type="preparatoire"] .formation-icon i {
+  color: #a8f6f3; /* Couleur pour le cycle préparatoire */
+}
+
+.formation-item[data-type="developpeur"] .formation-icon i {
+  color: #f9c74f; /* Couleur pour le développeur */
+}
+
+.formation-item[data-type="baccalaureat"] .formation-icon i {
+  color: #90be6d; /* Couleur pour le baccalauréat */
+}
+.formation-left {
+  flex: 0 0 300px; /* Garde la largeur fixe */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.stats-section {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.stats-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espace entre les lignes */
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espace entre l'icône et le texte */
+  font-size: 1.2rem;
+  color: var(--text-light);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Ligne de séparation subtile */
+  transition: all 0.3s ease;
+}
+
+.stat-item:last-child {
+  border-bottom: none; /* Pas de bordure pour le dernier élément */
+}
+
+.stat-item:hover {
+  transform: translateX(10px); /* Légère translation vers la droite au survol */
+  border-bottom-color: var(--accent-color); /* Changement de couleur de la bordure au survol */
+}
+
+.stat-item i {
+  font-size: 1.8rem;
+  color: var(--accent-color); /* Couleur d'accent pour les icônes */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.stat-item:hover i {
+  color: var(--secondary-color); /* Changement de couleur au survol */
+  transform: scale(1.1); /* Légère augmentation de la taille de l'icône */
+}
+
+.stat-number {
+  font-weight: bold;
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.stat-item:hover .stat-number {
+  color: var(--secondary-color); /* Changement de couleur au survol */
+}
+
+.stat-label {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.stat-item:hover .stat-label {
+  opacity: 1; /* Texte plus visible au survol */
+}
+
+/* Effet d'augmentation immédiate des chiffres */
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-number {
+  display: inline-block;
+  animation: count-up 0.5s ease-in-out forwards;
+}
+
+/* Ajout d'un effet de fond animé au survol */
+.stat-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.stat-item:hover::after {
+  opacity: 1; /* Fond animé visible au survol */
+} 
+/* Responsive Design */
+/* Responsive Design pour les téléphones */
+@media (max-width: 767px) {
+  .formation-section {
+    margin-left: 10px; /* Réduire la marge à gauche */
+    margin-right: 10px; /* Réduire la marge à droite */
+    width: calc(100% - 20px); /* Ajuster la largeur en conséquence */
+  }
+
+  .formation-wrapper {
+    flex-direction: column; /* Empiler l'image et le contenu */
+    align-items: center; /* Centrer les éléments */
+  }
+
+  .formation-image {
+    width: 90%; /* Réduire la largeur de l'image */
+    max-width: 300px; /* Limiter la largeur maximale */
+    margin-bottom: 20px; /* Espacement entre l'image et le contenu */
+  }
+
+  .formation-content {
+    width: 100%; /* Le contenu prend toute la largeur */
+    padding: 0 10px; /* Ajouter un peu de padding pour éviter que le texte ne touche les bords */
+  }
+
+  .formation-item {
+    flex-direction: column; /* Empiler les éléments dans chaque item */
+    align-items: center; /* Centrer les éléments */
+    text-align: center; /* Centrer le texte */
+  }
+
+  .formation-icon i {
+    margin-right: 0; /* Supprimer la marge à droite de l'icône */
+    margin-bottom: 10px; /* Ajouter une marge en bas pour l'icône */
+  }
+}
+@media (max-width: 480px) {
+  .formation-section {
+    margin-left: 5px; /* Réduire encore plus la marge à gauche */
+    margin-right: 5px; /* Réduire encore plus la marge à droite */
+    width: calc(100% - 10px); /* Ajuster la largeur en conséquence */
+  }
+
+  .formation-image {
+    width: 100%; /* L'image prend toute la largeur disponible */
+    max-width: none; /* Supprimer la limite de largeur maximale */
+  }
+
+  .formation-content {
+    padding: 0 5px; /* Réduire le padding */
+  }
+
+  .formation-item {
+    padding: 5px; /* Réduire le padding des items */
+  }
+
+  .formation-details h4 {
+    font-size: 1rem; /* Réduire la taille de la police */
+  }
+
+  .formation-details .date {
+    font-size: 0.8rem; /* Réduire la taille de la police */
+  }
+
+  .formation-details p {
+    font-size: 0.85rem; /* Réduire la taille de la police */
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .formation-section {
+    margin-left: 15px; /* Ajuster la marge à gauche */
+    margin-right: 15px; /* Ajuster la marge à droite */
+    width: calc(100% - 30px); /* Ajuster la largeur en conséquence */
+  }
+
+  .formation-image {
+    flex: 0 0 250px; /* Réduire la largeur fixe de l'image */
+  }
+
+  .formation-content {
+    padding: 0 15px; /* Ajouter un peu de padding */
+  }
+}
+@media (min-width: 1025px) {
+  .formation-section {
+    margin-left: 20px; /* Ajuster la marge à gauche */
+    margin-right: 20px; /* Ajuster la marge à droite */
+    width: calc(100% - 40px); /* Ajuster la largeur en conséquence */
+  }
+
+  .formation-image {
+    flex: 0 0 300px; /* Garder la largeur fixe de l'image */
+  }
+
+  .formation-content {
+    padding: 0 20px; /* Ajouter un peu de padding */
+  }
+}
+@media (min-width: 1441px) {
+  .formation-section {
+    margin-left: 30px; /* Ajuster la marge à gauche */
+    margin-right: 30px; /* Ajuster la marge à droite */
+    width: calc(100% - 60px); /* Ajuster la largeur en conséquence */
+  }
+
+  .formation-image {
+    flex: 0 0 350px; /* Augmenter la largeur fixe de l'image */
+  }
+
+  .formation-content {
+    padding: 0 30px; /* Ajouter un peu de padding */
+  }
+}
+
+/* Certifications */
+.certifications-section h3 {
+
+
+  font-size: 2rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.certification-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(69, 150, 233, 0.3);
+}
+
+.certification-icon i {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.certification-card h4 {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.certification-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.certification-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.certification-link:hover {
+  color: var(--accent-color);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.experience-item, .formation-item, .certification-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.experience-item {
+  animation-delay: 0.2s;
+}
+
+.formation-item {
+  animation-delay: 0.4s;
+}
+
+.certification-card {
+  animation-delay: 0.6s;
+}
+
+/* Animation pour les cartes de projet */
+/* Section Projets */
+/* Section Projets */
+
+:root {
+  --dark-bg: #0d1b2a; /* Fond sombre plus profond */
+  --light-bg: #e0e1dd; /* Fond clair plus doux */
+  --primary-color: #1b263b; /* Couleur principale plus sobre */
+  --secondary-color: #ff6b6b; /* Couleur secondaire vibrante */
+  --accent-color: #4ecdc4; /* Couleur d'accent plus fraîche */
+  --text-light: #ffffff; /* Texte clair */
+  --text-dark: #0d1b2a; /* Texte sombre */
+}
+
+/* Section Projets */
+#projets {
+  padding: 10px 10px;
+  background: var(--dark-bg); /* Utilisation du fond sombre */
+  color: var(--text-light); /* Texte clair */
+}
+
+#projets .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#projets h2 {
+  font-size: 2.5rem; /* Taille de police plus grande */
+  color: var(--text-light);
+  margin-bottom: 40px; /* Espacement accru */
+  text-align: center; /* Centrer le texte */
+  position: relative;
+  width: 100%; /* Occuper toute la largeur */
+  padding-bottom: 10px; /* Espace pour la bordure animée */
+}
+
+/* Effet de soulignement animé centré */
+#projets h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px; /* Largeur de la bordure */
+  height: 3px; /* Épaisseur de la bordure */
+  background: var(--accent-color); /* Couleur de la bordure */
+  transform: translateX(-50%); /* Centrer la bordure */
+  transition: width 0.3s ease; /* Animation de la bordure */
+}
+
+#projets h2:hover::after {
+  width: 100%; /* La bordure s'étend sur toute la largeur au survol */
+}
+
+/* Effet de texte dégradé */
+#projets h2 span {
+  background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Rendre le texte transparent pour afficher le dégradé */
+}
+
+/* Ombre portée pour le titre */
+#projets h2 {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+/* Conteneur des projets */
+.projet-ligne {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Carte de projet */
+.projet-item {
+  display: flex;
+  background: var(--primary-color); /* Couleur principale */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure subtile */
+}
+
+.projet-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(255, 107, 107, 0.3); /* Ombre avec couleur secondaire */
+  border-color: var(--accent-color); /* Bordure colorée au survol */
+}
+
+/* Image du projet */
+.projet-image {
+  flex: 1;
+  max-width: 300px; /* Largeur réduite de l'image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Espace autour de l'image */
+  background: rgba(255, 255, 255, 0.05); /* Fond légèrement clair */
+}
+
+.projet-image img {
+  max-width: 100%; /* L'image s'adapte à la largeur du conteneur */
+  height: auto; /* Hauteur automatique pour conserver le ratio */
+  border-radius: 8px; /* Bordures arrondies */
+  transition: opacity 0.3s ease;
+}
+
+.projet-item:hover .projet-image img {
+  opacity: 0.9; /* Légère opacité au survol */
+}
+
+/* Contenu du projet */
+.projet-content {
+  flex: 2;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.projet-content h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--text-light);
+  position: relative;
+}
+
+.projet-content h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color); /* Couleur d'accent */
+  transition: width 0.3s ease;
+}
+
+.projet-item:hover .projet-content h3::after {
+  width: 100px; /* Effet de soulignement animé */
+}
+
+.projet-content .description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--light-bg); /* Texte clair sur fond sombre */
+}
+
+/* Technologies utilisées */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tech-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.tech-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px); /* Effet de levée au survol */
+}
+
+.tech-item i {
+  font-size: 1.2rem;
+  color: var(--accent-color); /* Couleur d'accent */
+}
+
+/* Boutons */
+.projet-links {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-light);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--secondary-color); /* Couleur secondaire */
+  box-shadow: 0 4px 6px rgba(255, 107, 107, 0.2);
+}
+
+.btn-primary:hover {
+  background: #ff4c4c; /* Variation de la couleur secondaire */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
+}
+
+.btn-secondary {
+  background: var(--primary-color); /* Couleur principale */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:hover {
+  background: #2a3a5a; /* Variation de la couleur principale */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #projets {
+    padding: 10px 10px; /* Réduire le padding horizontal */
+  }
+
+  #projets .container {
+    padding: 0 10px; /* Réduire le padding du conteneur */
+  }
+
+  #projets h2 {
+    font-size: 2rem; /* Réduire la taille de la police */
+    margin-bottom: 30px; /* Réduire l'espacement */
+  }
+
+  .projet-ligne {
+    gap: 20px; /* Réduire l'espace entre les projets */
+  }
+
+  .projet-item {
+    flex-direction: column; /* Empiler l'image et le contenu */
+  }
+
+  .projet-image {
+    max-width: 100%; /* L'image prend toute la largeur */
+    padding: 10px; /* Réduire le padding */
+  }
+
+  .projet-content {
+    padding: 20px; /* Réduire le padding */
+  }
+
+  .projet-content h3 {
+    font-size: 1.8rem; /* Réduire la taille de la police */
+  }
+
+  .projet-content .description {
+    font-size: 0.9rem; /* Réduire la taille de la police */
+  }
+
+  .tech-item {
+    font-size: 0.8rem; /* Réduire la taille de la police */
+    padding: 6px 12px; /* Réduire le padding */
+  }
+
+  .btn {
+    padding: 10px 20px; /* Réduire le padding */
+    font-size: 0.9rem; /* Réduire la taille de la police */
+  }
+}
+@media (max-width: 480px) {
+  #projets {
+    padding: 10px 5px; /* Réduire encore plus le padding horizontal */
+  }
+
+  #projets .container {
+    padding: 0 5px; /* Réduire encore plus le padding du conteneur */
+  }
+
+  #projets h2 {
+    font-size: 1.8rem; /* Réduire encore plus la taille de la police */
+    margin-bottom: 20px; /* Réduire encore plus l'espacement */
+  }
+
+  .projet-ligne {
+    gap: 15px; /* Réduire encore plus l'espace entre les projets */
+  }
+
+  .projet-image {
+    padding: 5px; /* Réduire encore plus le padding */
+  }
+
+  .projet-content {
+    padding: 15px; /* Réduire encore plus le padding */
+  }
+
+  .projet-content h3 {
+    font-size: 1.6rem; /* Réduire encore plus la taille de la police */
+  }
+
+  .projet-content .description {
+    font-size: 0.85rem; /* Réduire encore plus la taille de la police */
+  }
+
+  .tech-item {
+    font-size: 0.75rem; /* Réduire encore plus la taille de la police */
+    padding: 5px 10px; /* Réduire encore plus le padding */
+  }
+
+  .btn {
+    padding: 8px 16px; /* Réduire encore plus le padding */
+    font-size: 0.85rem; /* Réduire encore plus la taille de la police */
+  }
+}
+@media (min-width: 1025px) {
+  #projets {
+    padding: 20px 20px; /* Ajuster le padding horizontal */
+  }
+
+  #projets .container {
+    padding: 0 20px; /* Ajuster le padding du conteneur */
+  }
+
+  #projets h2 {
+    font-size: 2.5rem; /* Ajuster la taille de la police */
+    margin-bottom: 40px; /* Ajuster l'espacement */
+  }
+
+  .projet-ligne {
+    gap: 40px; /* Ajuster l'espace entre les projets */
+  }
+
+  .projet-image {
+    max-width: 300px; /* Ajuster la largeur de l'image */
+    padding: 20px; /* Ajuster le padding */
+  }
+
+  .projet-content {
+    padding: 30px; /* Ajuster le padding */
+  }
+
+  .projet-content h3 {
+    font-size: 2rem; /* Ajuster la taille de la police */
+  }
+
+  .projet-content .description {
+    font-size: 1rem; /* Ajuster la taille de la police */
+  }
+
+  .tech-item {
+    font-size: 0.9rem; /* Ajuster la taille de la police */
+    padding: 8px 16px; /* Ajuster le padding */
+  }
+
+  .btn {
+    padding: 12px 24px; /* Ajuster le padding */
+    font-size: 1rem; /* Ajuster la taille de la police */
+  }
+}
+/* Section Contact */
+#contact {
+  padding: 40px 0;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  text-align: center;
+}
+
+#contact .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#contact h2 {
+  font-size: 2.8rem; /* Taille de police légèrement plus grande */
+  margin-bottom: 40px; /* Espacement en bas */
+  color: var(--text-light);
+  position: relative;
+  display: inline-block; /* Pour limiter la largeur du titre */
+  padding-bottom: 10px; /* Espace pour la bordure animée */
+  text-align: center; /* Centrer le texte */
+}
+
+/* Effet de soulignement animé centré */
+#contact h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 80px; /* Largeur de la bordure */
+  height: 4px; /* Épaisseur de la bordure */
+  background: var(--accent-color); /* Couleur de la bordure */
+  transform: translateX(-50%); /* Centrer la bordure */
+  transition: width 0.3s ease; /* Animation de la bordure */
+}
+
+#contact h2:hover::after {
+  width: 100%; /* La bordure s'étend sur toute la largeur au survol */
+}
+
+/* Effet de texte dégradé */
+#contact h2 span {
+  background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Rendre le texte transparent pour afficher le dégradé */
+}
+
+/* Ombre portée pour le titre */
+#contact h2 {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+
+/* Centrer le titre dans la section */
+#contact {
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  flex-direction: column; /* Aligner les éléments en colonne */
+  text-align: center; /* Centrer le texte */
+}
+.contact-intro {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 370px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-item i {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.contact-item span {
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+/* Effet de survol */
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.15); /* Fond légèrement plus clair */
+  transform: translateY(-5px); /* Translation plus subtile */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus douce */
+}
+
+.contact-item:hover i {
+  transform: scale(1.1); /* Agrandissement plus subtil de l'icône */
+  color: var(--secondary-color); /* Changement de couleur de l'icône */
+}
+
+.contact-item:hover span {
+  opacity: 0.9; /* Légère transparence pour le texte */
+  color: var(--secondary-color); /* Changement de couleur du texte */
+}
+
+/* Effet de fond animé au survol */
+.contact-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%; /* Largeur réduite pour un effet plus subtil */
+  height: 200%; /* Hauteur réduite pour un effet plus subtil */
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  border-radius: 50%;
+  z-index: -1; /* Place l'effet derrière le contenu */
+  opacity: 0; /* Commence invisible */
+}
+
+.contact-item:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Agrandit l'effet */
+  opacity: 1; /* Rend l'effet visible */
+}
+/* Couleurs spécifiques pour chaque élément */
+.contact-item[href*="tel"] {
+  background: rgba(76, 175, 80, 0.1); /* Vert pour Téléphone */
+}
+
+.contact-item[href*="mailto"] {
+  background: rgba(233, 69, 96, 0.1); /* Rouge pour Email */
+}
+
+.contact-item[href*="whatsapp"] {
+  background: rgba(37, 211, 102, 0.1); /* Vert pour WhatsApp */
+}
+
+.contact-item[href*="linkedin"] {
+  background: rgba(10, 102, 194, 0.1); /* Bleu pour LinkedIn */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #contact {
+    padding: 20px 10px; /* Réduire le padding horizontal */
+  }
+
+  #contact .container {
+    padding: 0 10px; /* Réduire le padding du conteneur */
+  }
+
+  #contact h2 {
+    font-size: 2rem; /* Réduire la taille de la police */
+    margin-bottom: 30px; /* Réduire l'espacement */
+  }
+
+  .contact-intro {
+    font-size: 1rem; /* Réduire la taille de la police */
+    margin-bottom: 30px; /* Réduire l'espacement */
+  }
+
+  .contact-list {
+    gap: 15px; /* Réduire l'espace entre les éléments */
+  }
+
+  .contact-item {
+    width: 100%; /* L'élément prend toute la largeur */
+    max-width: 300px; /* Limiter la largeur maximale */
+    padding: 15px; /* Réduire le padding */
+  }
+
+  .contact-item i {
+    font-size: 1.5rem; /* Réduire la taille de l'icône */
+  }
+
+  .contact-item span {
+    font-size: 0.9rem; /* Réduire la taille de la police */
+  }
+}
+@media (max-width: 480px) {
+  #contact {
+    padding: 20px 5px; /* Réduire encore plus le padding horizontal */
+  }
+
+  #contact .container {
+    padding: 0 5px; /* Réduire encore plus le padding du conteneur */
+  }
+
+  #contact h2 {
+    font-size: 1.8rem; /* Réduire encore plus la taille de la police */
+    margin-bottom: 20px; /* Réduire encore plus l'espacement */
+  }
+
+  .contact-intro {
+    font-size: 0.9rem; /* Réduire encore plus la taille de la police */
+    margin-bottom: 20px; /* Réduire encore plus l'espacement */
+  }
+
+  .contact-list {
+    gap: 10px; /* Réduire encore plus l'espace entre les éléments */
+  }
+
+  .contact-item {
+    padding: 10px; /* Réduire encore plus le padding */
+  }
+
+  .contact-item i {
+    font-size: 1.3rem; /* Réduire encore plus la taille de l'icône */
+  }
+
+  .contact-item span {
+    font-size: 0.85rem; /* Réduire encore plus la taille de la police */
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #contact {
+    padding: 30px 15px; /* Ajuster le padding horizontal */
+  }
+
+  #contact .container {
+    padding: 0 15px; /* Ajuster le padding du conteneur */
+  }
+
+  #contact h2 {
+    font-size: 2.2rem; /* Ajuster la taille de la police */
+    margin-bottom: 35px; /* Ajuster l'espacement */
+  }
+
+  .contact-intro {
+    font-size: 1.05rem; /* Ajuster la taille de la police */
+    margin-bottom: 35px; /* Ajuster l'espacement */
+  }
+
+  .contact-list {
+    gap: 25px; /* Ajuster l'espace entre les éléments */
+  }
+
+  .contact-item {
+    width: 300px; /* Ajuster la largeur */
+    padding: 18px; /* Ajuster le padding */
+  }
+
+  .contact-item i {
+    font-size: 1.7rem; /* Ajuster la taille de l'icône */
+  }
+
+  .contact-item span {
+    font-size: 0.95rem; /* Ajuster la taille de la police */
+  }
+}
+@media (min-width: 1025px) {
+  #contact {
+    padding: 40px 20px; /* Ajuster le padding horizontal */
+  }
+
+  #contact .container {
+    padding: 0 20px; /* Ajuster le padding du conteneur */
+  }
+
+  #contact h2 {
+    font-size: 2.8rem; /* Ajuster la taille de la police */
+    margin-bottom: 40px; /* Ajuster l'espacement */
+  }
+
+  .contact-intro {
+    font-size: 1.1rem; /* Ajuster la taille de la police */
+    margin-bottom: 40px; /* Ajuster l'espacement */
+  }
+
+  .contact-list {
+    gap: 30px; /* Ajuster l'espace entre les éléments */
+  }
+
+  .contact-item {
+    width: 350px; /* Ajuster la largeur */
+    padding: 20px; /* Ajuster le padding */
+  }
+
+  .contact-item i {
+    font-size: 1.8rem; /* Ajuster la taille de l'icône */
+  }
+
+  .contact-item span {
+    font-size: 1rem; /* Ajuster la taille de la police */
+  }
+}
