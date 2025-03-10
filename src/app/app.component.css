@@ -224,7 +224,7 @@ body {
 }
 
 .subtitle {
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   color: var(--accent-color);
   margin-bottom: 20px;
   opacity: 1;
@@ -389,7 +389,7 @@ body {
   }
 
   .subtitle {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .image-container {
@@ -425,11 +425,11 @@ body {
   }
 
   .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .btn1 {
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 10px 20px;
   }
 
@@ -448,13 +448,13 @@ body {
   .hero {
     padding: 20px 15px;
   }
- 
+
   .text-container h1 {
     font-size: 2rem;
   }
 
   .subtitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   .tech-icons i {
     font-size: 1rem; /* Taille réduite des icônes */
@@ -498,6 +498,7 @@ body {
   .hero {
     padding: 40px 10px;
     margin-top: 20px;
+    
   }
 
   .text-container h1 {
@@ -505,7 +506,7 @@ body {
   }
 
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .image-container {
@@ -514,11 +515,9 @@ body {
   }
 
   .btn1 {
-    font-size: 1rem; /* Augmenter la taille du bouton */
-    padding: 10px 20px; /* Ajuster le padding pour un meilleur rendu */
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
-
-
 
   .contact-icon {
     width: 60px;
