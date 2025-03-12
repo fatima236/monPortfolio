@@ -2092,3 +2092,30 @@ body {
     font-size: 1rem; /* Ajuster la taille de la police */
   }
 }
+/* Citation */
+.contact-quote {
+  margin-top: 40px;
+  font-size: 1.1rem;
+  font-style: italic;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.contact-quote p {
+  margin: 0;
+}
+
+.contact-quote:hover {
+  opacity: 1;
+}
+
+/* Copyright */
+.contact-copyright {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.contact-copyright p {
+  margin: 0;
+}

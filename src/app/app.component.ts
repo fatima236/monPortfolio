@@ -16,7 +16,15 @@ export class AppComponent {
 title = 'mon-portfolio-fati'
   // Basculer le menu mobile
  
+  currentYear: number = new Date().getFullYear();
 
+  ngOnInit() {
+    // Mettre à jour l'année en cours dans le copyright
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+      yearElement.textContent = this.currentYear.toString();
+    }
+  }
   // Basculer le menu mobile
  
     menuValue: boolean = false;
