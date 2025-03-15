@@ -727,9 +727,10 @@ body {
 
 
 /* Responsive Design */
+/* Responsive Design - Image avant le texte sur petits écrans */
 @media (max-width: 768px) {
   .about-container {
-    flex-direction: column;
+    flex-direction: column-reverse; /* Inverser l'ordre pour que l'image soit en haut */
     text-align: center;
   }
 
@@ -750,9 +751,25 @@ body {
 
 @media (max-width: 480px) {
   .skill-grid {
-    grid-template-columns: 1fr; /* 1 colonne sur très petits écrans */
+    grid-template-columns: 1fr; /* 1 compétence par ligne, remplissant toute la largeur */
+    gap: 20px; /* Espacement entre les compétences */
+    width: 100%; /* Remplir toute la largeur */
   }
-
+  .skill {
+    width: 100%; /* Chaque compétence prend toute la largeur */
+    padding: 20px; /* Un peu de padding pour que les compétences ne touchent pas les bords */
+    box-sizing: border-box; /* Inclure le padding dans le calcul de la largeur */
+  }
+  .skill span {
+    font-size: 1rem; /* Augmenter la taille du texte */
+    display: block; /* Pour forcer le texte à s'afficher sur une nouvelle ligne */
+    text-align: center; /* Centrer le texte */
+  }
+  .skills h2
+  {
+    font-size: 1.7 rem; 
+    padding-bottom: 10px;
+  }
   .about-text h1 {
     font-size: 2rem; /* Réduire la taille du titre */
   }
