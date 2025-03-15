@@ -735,7 +735,8 @@ body {
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column-reverse; /* Inverser l'ordre pour que l'image soit en haut */
-    text-align: center;
+    align-items: flex-start; /* Aligner à gauche */
+    padding: 5px;
   }
 
   .about-image {
@@ -754,6 +755,11 @@ body {
 }
 
 @media (max-width: 480px) {
+  .about-container {
+    flex-direction: column-reverse; /* Inverser l'ordre pour que l'image soit en haut */
+    align-items: flex-start; /* Aligner à gauche */
+    padding: 5px;
+  }
   .skill-grid {
     grid-template-columns: 1fr; /* 1 compétence par ligne, remplissant toute la largeur */
     gap: 20px; /* Espacement entre les compétences */
@@ -771,7 +777,7 @@ body {
   }
   .skills h2
   {
-    font-size: 1.7 rem; 
+    font-size: 1.7rem; 
  
   }
   .about-text h1 {
