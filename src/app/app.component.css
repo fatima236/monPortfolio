@@ -49,7 +49,9 @@ body {
 .navbar-brand {
   font-size: 1.5rem; /* Taille de police */
   font-weight: bold; /* Texte en gras */
-  color: var(--text-light); /* Couleur du texte */
+  color: transparent; /* Rendre le texte transparent pour appliquer le dégradé */
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); /* Dégradé de couleur */
+  background-clip: text; /* Appliquer le dégradé au texte */
   text-decoration: none; /* Supprimer le soulignement */
   display: flex;
   align-items: center;
@@ -213,15 +215,21 @@ body {
 .text-container h1 {
   font-size: 3.5rem;
   margin-bottom: 15px;
-  color: var(--secondary-color);
+  color: transparent;
+  background-image: linear-gradient(90deg, #ff6b6b, #AF002D 70%, #319197);
+  -webkit-background-clip: text;
+  background-clip: text;
+
   overflow: hidden;
   white-space: nowrap;
   border-right: 3px solid var(--accent-color);
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-  font-family: 'Arial', sans-serif;
+
+ 
   letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 
 @keyframes typing {
   from { width: 0; }
@@ -649,16 +657,16 @@ body {
 }
 
 .skills h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 10px 20px;
   color: var(--secondary-color);
   text-align: center;
 }
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 3fr));
+  gap: 60px;
   width: 100%;
 }
 
