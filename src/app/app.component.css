@@ -556,6 +556,15 @@ body {
   }
 }
 /* Section About */
+#about {
+  padding: 10px 20px;
+  padding-bottom: 40px;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
 
 /* Section About */
 .about-container {
