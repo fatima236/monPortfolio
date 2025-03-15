@@ -339,7 +339,7 @@ body {
 }
 
 .contact-icon:hover i {
-  transform: scale(1.2);
+  transform: scale(1);
 }
 
 .contact-icon span {
@@ -361,7 +361,7 @@ body {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.5s ease;
-  border-radius: 50%;
+  border-radius: 80%;
   z-index: 0;
 }
 
@@ -547,41 +547,70 @@ body {
 /* Section About */
 
 /* Section About */
-#about {
-  padding: 10px 20px;
-  padding-bottom: 40px;
-  background: var(--dark-bg);
-  color: var(--text-light);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Séparateur visuel entre Hero et About */
-.section-separator {
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  z-index: 1;
-}
-
-.section-separator svg {
-  width: 100%;
-  height: 100%;
-}
-
-.section-separator path {
-  fill: var(--dark-bg);
-}
-
 .about-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: row-reverse;
+  justify-content: space-between; /* Bien séparer texte et image */
   max-width: 1200px;
   margin: 0 auto;
   gap: 50px;
+  padding: 10px 20px;
+}
+
+/* Partie Texte */
+.about-text {
+  flex: 2;
+  max-width: 600px;
+  padding: 0 20px;
+}
+.about-text h1 {
+  font-size: 2.5rem; /* Taille de police plus grande */
+  color: var(--text-light);
+  margin-bottom: 40px; /* Espacement accru */
+  text-align: center; /* Centrer le texte */
+  position: relative;
+  width: 100%; /* Occuper toute la largeur */
+  padding-bottom: 10px; /* Espace pour la bordure animée */
+}
+
+/* Effet de soulignement animé centré */
+.about-text h1::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px; /* Largeur de la bordure */
+  height: 3px; /* Épaisseur de la bordure */
+  background: var(--accent-color); /* Couleur de la bordure */
+  transform: translateX(-50%); /* Centrer la bordure */
+  transition: width 0.3s ease; /* Animation de la bordure */
+}
+
+.about-text h1:hover::after {
+  width: 100%; /* La bordure s'étend sur toute la largeur au survol */
+}
+
+/* Effet de texte dégradé */
+.about-text h1 span {
+  background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Rendre le texte transparent pour afficher le dégradé */
+}
+
+/* Ombre portée pour le titre */
+.about-text h1 {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+
+.about-text .intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
 }
 
 /* Partie Image */
@@ -589,19 +618,17 @@ body {
   flex: 1;
   max-width: 400px;
   position: relative;
-  padding-top: 70px;
-  margin: 0 auto; /* Centrer l'image */
+  margin: 0 auto;
 }
 
 .about-image .image-wrapper {
-  width: 100%; /* Prendre toute la largeur disponible */
-  max-width: 350px; /* Limiter la largeur maximale */
+  width: 100%;
+  max-width: 350px;
   height: 350px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 0 30px rgba(124, 102, 241, 0.5);
-  position: relative;
-  margin: 0 auto; /* Centrer le wrapper */
+  box-shadow: 0 12px 24px rgba(255, 107, 107, 0.3);
+  margin: 0 auto;
 }
 
 .about-image img {
@@ -609,6 +636,59 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+}
+/* ✅ Tu peux ajouter un petit effet hover si tu veux */
+.about-image .image-wrapper:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
+}
+/* Skills sur toute la largeur */
+.skills {
+  margin-top: 40px;
+  padding: 0 40px;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Skill Card */
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(124, 102, 241, 0.5);
+}
+
+.skill i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.skill span {
+  font-size: 1.1rem;
+  color: var(--text-light);
 }
 .highlight {
   color: var(--accent-color);
@@ -637,96 +717,6 @@ body {
   z-index: 1;
 }
 
-.tech-icons i {
-  position: absolute;
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  opacity: 0.8;
-  animation: rotateIcon 10s linear infinite;
-}
-
-.tech-icons i:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%) translateY(-150%); animation-duration: 8s; }
-.tech-icons i:nth-child(2) { top: 20%; right: 10%; transform: translateX(50%) translateY(-50%); animation-duration: 10s; }
-.tech-icons i:nth-child(3) { top: 50%; right: 0; transform: translateX(50%) translateY(-50%); animation-duration: 7s; }
-.tech-icons i:nth-child(4) { top: 80%; right: 10%; transform: translateX(50%) translateY(50%); animation-duration: 9s; }
-.tech-icons i:nth-child(5) { top: 80%; left: 10%; transform: translateX(-50%) translateY(50%); animation-duration: 12s; }
-.tech-icons i:nth-child(6) { top: 50%; left: 0; transform: translateX(-50%) translateY(-50%); animation-duration: 11s; }
-.tech-icons i:nth-child(7) { top: 20%; left: 10%; transform: translateX(-50%) translateY(-50%); animation-duration: 13s; }
-
-@keyframes rotateIcon {
-  0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-}
-
-/* Partie Texte */
-.about-text {
-  flex: 1;
-  max-width: 600px;
-  margin: 0 auto; /* Centrer le texte */
-  padding: 0 20px; /* Ajouter un espacement latéral */
-}
-
-.about-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  background: linear-gradient(90deg, var(--text-light), var(--secondary-color));
-  background-clip: text; /* Propriété standard */
-  -webkit-background-clip: text; /* Préfixe vendeur */
-  -webkit-text-fill-color: transparent;
-  animation: slideInLeft 1s ease-in-out;
-}
-
-.about-text .intro {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  color: var(--text-light);
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
-  animation-delay: 0.5s;
-}
-
-.skills h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: var(--secondary-color);
-  text-align: center; /* Centrer le titre */
-}
-
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Grille adaptable */
-  gap: 20px;
-  padding: 0 20px; /* Ajouter un espacement latéral */
-}
-
-.skill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(124, 102, 241, 0.5);
-}
-
-.skill i {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: var(--accent-color);
-}
-
-.skill span {
-  font-size: 1.1rem;
-  color: var(--text-light);
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
