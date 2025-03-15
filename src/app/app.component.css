@@ -308,7 +308,6 @@ body {
   color: var(--text-light);
   animation: fadeIn 2.5s ease-in-out;
 }
-
 .contact-icons {
   display: flex;
   gap: 25px;
@@ -336,18 +335,19 @@ body {
 }
 
 .contact-icon:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-10px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 123, 255, 0.1); /* Couleur de fond légèrement changée au survol */
+  transform: scale(1.1); /* Effet de zoom léger au survol */
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3); /* Ombre marquée */
 }
 
+/* Icône de contact */
 .contact-icon i {
   transition: transform 0.3s ease, opacity 0.3s ease;
   z-index: 1;
 }
 
 .contact-icon:hover i {
-  transform: scale(1);
+  transform: scale(1.2); /* Légère augmentation de la taille de l'icône */
 }
 
 .contact-icon span {
@@ -356,9 +356,10 @@ body {
 }
 
 .contact-icon:hover span {
-  opacity: 0.8;
+  opacity: 1; /* Textes deviennent complètement visibles au survol */
 }
 
+/* Effet de fond radial au survol */
 .contact-icon::before {
   content: '';
   position: absolute;
@@ -366,7 +367,7 @@ body {
   left: 50%;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+   /* Dégradé coloré au survol */
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.5s ease;
   border-radius: 80%;
@@ -374,8 +375,9 @@ body {
 }
 
 .contact-icon:hover::before {
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1); /* Agrandir l'effet au survol */
 }
+
 /* Couleurs spécifiques pour chaque type de contact */
 .contact-icon[href*="mailto"] {
   background: rgba(233, 69, 96, 0.1);
@@ -396,6 +398,7 @@ body {
 .contact-icon[href*="whatsapp"] {
   background: rgba(37, 211, 102, 0.1);
 }
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .hero-content {
@@ -658,6 +661,7 @@ body {
 
 .skills h2 {
   font-size: 2rem;
+  padding-bottom: 10px;
   margin-bottom: 10px 20px;
   color: var(--secondary-color);
   text-align: center;
@@ -768,7 +772,7 @@ body {
   .skills h2
   {
     font-size: 1.7 rem; 
-    padding-bottom: 10px;
+ 
   }
   .about-text h1 {
     font-size: 2rem; /* Réduire la taille du titre */
