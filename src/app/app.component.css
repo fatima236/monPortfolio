@@ -549,10 +549,10 @@ body {
 /* Section About */
 #about {
   padding: 10px 20px;
-  padding-bottom: 20px;
+
   background: var(--dark-bg);
   color: var(--text-light);
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   position: relative;
   overflow: hidden;
 }
@@ -756,7 +756,7 @@ body {
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grille adaptable */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille adaptable */
   gap: 20px;
   padding: 0 20px; /* Ajouter un espacement latéral */
 }
@@ -787,6 +787,24 @@ body {
 .skill span {
   font-size: 1.1rem;
   color: var(--text-light);
+}
+/* Responsive : Ajuster la taille du titre pour les petits écrans (téléphone) */
+@media (max-width: 768px) {
+  .skills h1 {
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 2.5rem; /* Réduire la taille du texte pour les écrans plus petits */
+    margin-bottom: 30px; /* Réduire l'espacement en bas */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills h1 {
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 2rem; /* Réduire encore la taille pour les très petits écrans */
+    margin-bottom: 30px; /* Réduire encore l'espacement */
+  }
 }
 
 /* Responsive Design */
