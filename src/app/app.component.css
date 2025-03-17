@@ -213,10 +213,10 @@ body {
 .text-container h1 {
   font-size: 3.5rem;
   margin-bottom: 15px;
-  color: var(--secondary-color);
+  color: var(--accent-color);
   overflow: hidden;
   white-space: nowrap;
-  border-right: 3px solid var(--accent-color);
+  border-right: 3px solid var(--secondary-color);
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
   font-family: 'Arial', sans-serif;
   letter-spacing: 2px;
@@ -235,7 +235,7 @@ body {
 
 .subtitle {
   font-size: 1.8rem;
-  color: var(--accent-color);
+  color: var(--secondary-color);
   margin-bottom: 20px;
   opacity: 1;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -549,9 +549,10 @@ body {
 /* Section About */
 #about {
   padding: 10px 20px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   background: var(--dark-bg);
   color: var(--text-light);
+  margin-bottom: 40px;
   position: relative;
   overflow: hidden;
 }
@@ -589,7 +590,7 @@ body {
   flex: 1;
   max-width: 400px;
   position: relative;
-  padding-top: 70px;
+ 
   margin: 0 auto; /* Centrer l'image */
 }
 
@@ -666,15 +667,43 @@ body {
   padding: 0 20px; /* Ajouter un espacement latéral */
 }
 
+/* Style du titre À propos de moi */
 .about-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  background: linear-gradient(90deg, var(--text-light), var(--secondary-color));
-  background-clip: text; /* Propriété standard */
-  -webkit-background-clip: text; /* Préfixe vendeur */
-  -webkit-text-fill-color: transparent;
-  animation: slideInLeft 1s ease-in-out;
+  font-size: 3rem; /* Taille de police ajustée */
+  color: var(--text-light);
+  margin-bottom: 40px; /* Espacement accru */
+  text-align: center;
+  position: relative;
+  display: inline-block; /* Limiter la largeur du titre */
+  padding-bottom: 10px; /* Espace pour la bordure animée */
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre portée douce */
 }
+
+/* Effet de soulignement animé centré */
+.about-text h1::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px; /* Largeur de la bordure */
+  height: 3px; /* Épaisseur de la bordure */
+  background: var(--accent-color); /* Couleur de la bordure */
+  transform: translateX(-50%); /* Centrer la bordure */
+  transition: width 0.3s ease; /* Animation de la bordure */
+}
+
+.about-text h1:hover::after {
+  width: 100%; /* La bordure s'étend sur toute la largeur au survol */
+}
+
+/* Effet de texte dégradé */
+.about-text h1 span {
+  background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Rendre le texte transparent pour afficher le dégradé */
+}
+
 
 .about-text .intro {
   font-size: 1.2rem;
@@ -688,6 +717,7 @@ body {
 
 .skills h2 {
   font-size: 2rem;
+  
   margin-bottom: 20px;
   color: var(--secondary-color);
   text-align: center; /* Centrer le titre */
@@ -695,7 +725,7 @@ body {
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Grille adaptable */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grille adaptable */
   gap: 20px;
   padding: 0 20px; /* Ajouter un espacement latéral */
 }
