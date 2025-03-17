@@ -715,13 +715,44 @@ body {
   animation-delay: 0.5s;
 }
 
-.skills h2 {
-  font-size: 2rem;
-  
-  margin-bottom: 20px;
-  color: var(--secondary-color);
-  text-align: center; /* Centrer le titre */
+/* Style du titre Mes Compétences */
+.skills h1 {
+  font-size: 3rem; /* Taille de police ajustée */
+  color: var(--text-light);
+  margin-bottom: 40px; /* Espacement accru */
+  text-align: center; /* Centre le texte horizontalement */
+  position: relative;
+  display: inline-block; /* Limite la largeur du titre */
+  padding-bottom: 10px; /* Espace pour la bordure animée */
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre portée douce */
+  width: 100%; /* Assure que le titre occupe toute la largeur */
 }
+
+/* Effet de soulignement animé centré */
+.skills h1::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60px; /* Largeur de la bordure */
+  height: 3px; /* Épaisseur de la bordure */
+  background: var(--accent-color); /* Couleur de la bordure */
+  transform: translateX(-50%); /* Centrer la bordure */
+  transition: width 0.3s ease; /* Animation de la bordure */
+}
+
+.skills h1:hover::after {
+  width: 40%; /* La bordure s'étend sur toute la largeur au survol */
+}
+
+/* Effet de texte dégradé */
+.skills h1 span {
+  background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Rendre le texte transparent pour afficher le dégradé */
+}
+
 
 .skill-grid {
   display: grid;
