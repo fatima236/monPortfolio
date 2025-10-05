@@ -2198,3 +2198,9 @@ body {
 .contact-copyright p {
   margin: 0;
 }
+
+.experience-icon img {
+  width: 130px;       /* même largeur pour tous les logos */
+  height: 130px;      /* même hauteur */
+  object-fit: contain; /* garde le ratio sans déformer le logo */
+}
